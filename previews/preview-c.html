@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hemanth Vallamkonda: What I've Built</title>
+<meta name="description" content="Applied AI builder in London. Five real builds with what I built, why, how, who uses it and the result, plus how I would approach Shanly's problems.">
+<meta name="robots" content="noindex">
+<style>
+:root{
+  --paper:#F7F4EF;--paper2:#EFEAE1;--card:#FBF9F5;--ink:#1A1A18;--mute:#55524B;
+  --hair:#E4DFD6;--rule:#D9D2C5;--dash:#8C877C;
+  --accent:#A84A2F;--fill:#C45C3E;--forest:#2F5D50;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --sans:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6}
+a{color:inherit}
+a:focus-visible,button:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:var(--paper);padding:8px 12px;z-index:9}
+.skip:focus{left:8px}
+.w{max-width:1000px;margin:0 auto;padding:0 clamp(18px,4vw,40px)}
+.mono{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);line-height:1.5}
+[hidden]{display:none!important}
+
+/* erbsu: name + a few links, hairline under */
+header.top{border-bottom:1px solid var(--rule)}
+header.top .w{display:flex;align-items:center;justify-content:space-between;gap:16px;height:56px}
+.brand{font-family:var(--serif);font-weight:700;font-size:16px;text-decoration:none;white-space:nowrap}
+header nav ul{list-style:none;display:flex;gap:24px}
+header nav a{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);text-decoration:none}
+header nav a:hover{color:var(--ink);text-decoration:underline;text-underline-offset:4px}
+
+/* hero: hero-15 order, dhruv claim + contents rail */
+.hero{padding:56px 0 0}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 240px;gap:64px}
+.hero .eyebrow{margin-bottom:18px}
+h1{font-family:var(--serif);font-weight:700;font-size:clamp(31px,4.6vw,50px);line-height:1.1;letter-spacing:-.015em;max-width:18ch}
+.role{margin-top:18px;color:var(--accent)}
+.lede{margin-top:14px;font-size:16.5px;color:var(--mute);max-width:52ch}
+.ctas{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:24px}
+.btn{display:inline-block;font-size:14px;font-weight:600;text-decoration:none;padding:10px 16px;border:1px solid var(--ink)}
+.btn.solid{background:var(--ink);color:var(--paper)}
+.btn.solid:hover{background:#33322E}
+.btn.line:hover{background:var(--paper2)}
+.status{font-size:13.5px;color:var(--mute);margin-left:4px}
+.status::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--forest);margin-right:8px;vertical-align:middle}
+.small-note{margin-top:14px;font-size:13.5px;color:var(--mute);max-width:52ch}
+
+.contents{padding-top:4px}
+.contents>p{padding-bottom:10px;border-bottom:1px solid var(--rule)}
+.contents ol{list-style:none}
+.contents a{display:flex;align-items:baseline;gap:10px;padding:10px 0;font-size:14px;text-decoration:none}
+.contents a::after{content:"";order:2;flex:1;border-bottom:1px dashed var(--rule);transform:translateY(-4px)}
+.contents a span{order:3;font-family:var(--mono);font-size:11px;color:var(--accent)}
+.contents a:hover{color:var(--accent)}
+
+.strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:52px;border-top:1px solid var(--ink);border-bottom:1px solid var(--rule)}
+.strip div{padding:18px 20px 20px 0}
+.strip div+div{padding-left:20px;border-left:1px solid var(--rule)}
+.strip b{display:block;font-family:var(--serif);font-weight:700;font-size:clamp(24px,2.8vw,30px);line-height:1.1}
+.strip .mono{display:block;margin-top:8px;font-size:10.5px}
+
+/* section markers: dhruv */
+section{padding:80px 0 0;scroll-margin-top:8px}
+.sec{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.sec i{display:block;width:40px;height:1px;background:var(--mute)}
+.sec .t{color:var(--accent)}
+h2{font-family:var(--serif);font-weight:700;font-size:clamp(25px,3vw,32px);line-height:1.18;letter-spacing:-.01em;max-width:26ch}
+.intro{margin-top:10px;color:var(--mute);max-width:62ch;font-size:15.5px}
+
+/* registry.directory index rows */
+.filter{display:flex;flex-wrap:wrap;gap:4px 18px;margin-top:26px;font-family:var(--mono);font-size:12px}
+.filter span{color:var(--mute)}
+.filter button{font:inherit;background:none;border:0;padding:4px 0;color:var(--mute);cursor:pointer;border-bottom:1px solid transparent}
+.filter button[aria-pressed="true"]{color:var(--ink);border-bottom-color:var(--fill)}
+.index{margin-top:14px;border-top:1px solid var(--rule)}
+.row{border-bottom:1px solid var(--hair)}
+.row>summary{list-style:none;display:grid;grid-template-columns:24px minmax(0,1fr) auto;gap:14px;align-items:start;padding:14px 4px;cursor:pointer;font-family:var(--mono)}
+.row>summary::-webkit-details-marker{display:none}
+.row>summary:hover{background:var(--paper2)}
+.sq{width:24px;height:24px;border:1px solid var(--rule);background:var(--card);display:grid;place-items:center;font-size:10.5px;color:var(--mute);margin-top:1px}
+.row[open] .sq{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.ttl{display:block;font-family:var(--sans);font-weight:600;font-size:15px;line-height:1.35}
+.tg{display:block;font-size:11.5px;color:var(--mute);margin-top:3px}
+.meta{text-align:right;font-size:11.5px;color:var(--mute);white-space:nowrap}
+.meta strong{display:block;color:var(--forest);font-size:12.5px}
+.meta em{display:block;font-style:normal;color:var(--accent);margin-top:4px}
+.meta em::before{content:"Open"}
+.row[open] .meta em::before{content:"Close"}
+
+/* erbsu bordered case rectangle */
+.case{margin:4px 0 22px;border:1px solid var(--rule);background:var(--card)}
+.case-top{padding:20px 24px 16px;border-bottom:1px solid var(--hair)}
+.case-top .prov{color:var(--forest)}
+.case h3{font-family:var(--serif);font-weight:700;font-size:21px;line-height:1.25;margin-top:6px;max-width:40ch}
+.case .one{margin-top:4px;color:var(--mute);font-size:15px;max-width:62ch}
+dl.facts{padding:2px 24px}
+dl.facts div{display:grid;grid-template-columns:140px minmax(0,1fr);gap:20px;padding:11px 0;border-bottom:1px solid var(--hair)}
+dl.facts div:last-child{border-bottom:0}
+dl.facts dt{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);padding-top:4px}
+dl.facts dd{max-width:64ch;font-size:15px}
+dl.facts .r dd{font-weight:600;color:var(--forest)}
+.gate{color:var(--accent);font-weight:700}
+.flow{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--rule)}
+.flow>div{padding:16px 24px 20px}
+.flow>div+div{border-left:1px solid var(--rule)}
+.flow .mono{display:block;margin-bottom:8px}
+.flow ol{list-style:none;counter-reset:s}
+.flow li{counter-increment:s;position:relative;padding:4px 0 4px 28px;font-size:14.5px}
+.flow li::before{content:counter(s,decimal-leading-zero);position:absolute;left:0;top:7px;font-family:var(--mono);font-size:10.5px;color:var(--mute)}
+
+/* 21st stats-bento, AirTM only */
+.bento{margin-top:30px;display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:10px}
+.cell{border:1px solid var(--rule);background:var(--card);padding:18px 20px}
+.cell.big{grid-row:1 / span 3;background:var(--ink);color:var(--paper);border-color:var(--ink);display:flex;flex-direction:column;justify-content:space-between;gap:24px}
+.cell.big .mono{color:#CFC9BD}
+.cell.big .mono::before{content:"";display:inline-block;width:8px;height:8px;background:var(--fill);margin-right:10px;vertical-align:0}
+.cell b{display:block;font-family:var(--serif);font-weight:700;font-size:28px;line-height:1.1}
+.cell.big b{font-size:clamp(44px,6vw,64px)}
+.cell .mono{display:block;margin-top:6px;font-size:10.5px}
+.cell p{font-size:15px;color:#E7E2D8;max-width:34ch;margin-top:8px}
+.after-bento{margin-top:12px;font-size:14.5px;color:var(--mute)}
+
+/* method */
+.method{margin-top:30px;list-style:none;border-top:1px solid var(--ink)}
+.method li{display:grid;grid-template-columns:48px minmax(0,1fr) minmax(0,1fr);gap:20px;padding:14px 0;border-bottom:1px solid var(--hair);align-items:baseline}
+.method .k{font-family:var(--mono);font-size:11.5px;color:var(--accent)}
+.method b{font-weight:600}
+.method span.e{font-size:14px;color:var(--mute)}
+.tools{margin-top:24px;display:grid;grid-template-columns:140px minmax(0,1fr);gap:20px;align-items:baseline}
+.tools p:last-child{font-size:14.5px;color:var(--mute)}
+
+/* ideas: dashed band */
+.band{margin-top:30px;border:1px dashed var(--dash);padding:6px 24px 24px}
+.idea{padding:22px 0;border-bottom:1px solid var(--rule)}
+.idea:last-child{border-bottom:0}
+.label{font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--accent);line-height:1.5}
+.idea h3{font-family:var(--serif);font-weight:700;font-size:21px;margin-top:8px}
+.idea .ctx{margin-top:4px;color:var(--mute);font-size:15px;max-width:64ch}
+.idea .flow{margin-top:14px;border:1px solid var(--rule);background:var(--card)}
+.check{list-style:none;margin-top:12px;counter-reset:c;border-top:1px solid var(--hair)}
+.check li{counter-increment:c;display:grid;grid-template-columns:32px 1fr;padding:8px 0;border-bottom:1px solid var(--hair);font-size:15px}
+.check li::before{content:counter(c,decimal-leading-zero);font-family:var(--mono);font-size:11px;color:var(--mute);padding-top:3px}
+
+/* mock-up */
+.mock{margin-top:16px;border:1px solid var(--ink);background:var(--card)}
+.mock-top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:10px 16px;border-bottom:1px solid var(--rule)}
+.mock-body{display:grid;grid-template-columns:230px minmax(0,1fr)}
+.mtabs{border-right:1px solid var(--rule)}
+.mtabs button{display:grid;grid-template-columns:30px 1fr;width:100%;text-align:left;background:none;border:0;border-bottom:1px solid var(--hair);border-left:2px solid transparent;padding:9px 14px;font:inherit;font-size:14px;color:var(--mute);cursor:pointer}
+.mtabs button:last-child{border-bottom:0}
+.mtabs button span{font-family:var(--mono);font-size:10.5px;padding-top:3px}
+.mtabs button[aria-selected="true"]{color:var(--ink);border-left-color:var(--fill);background:var(--paper2);font-weight:600}
+.mpanel{padding:18px 22px 22px}
+.mpanel h4{font-family:var(--serif);font-weight:700;font-size:19px}
+.mpanel p{margin-top:6px;color:var(--mute);max-width:56ch;font-size:15px}
+.mpanel table{margin-top:12px;border-collapse:collapse;font-size:14px;width:100%;max-width:440px}
+.mpanel caption{text-align:left;padding-bottom:6px}
+.mpanel th,.mpanel td{text-align:left;padding:7px 0;border-top:1px solid var(--hair);vertical-align:top}
+.mpanel th{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);font-weight:400;width:130px}
+.mfoot{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 16px;border-top:1px solid var(--rule)}
+.mfoot button{font:inherit;font-size:14px;padding:6px 14px;border:1px solid var(--ink);background:var(--paper);cursor:pointer}
+.mfoot button:disabled{opacity:.45;cursor:default}
+.bar{height:2px;background:var(--rule);flex:1;max-width:220px}
+.bar i{display:block;height:2px;background:var(--forest);width:16.6%}
+.static-ol{list-style:none;padding:6px 16px 14px;counter-reset:m}
+.static-ol li{counter-increment:m;display:grid;grid-template-columns:30px 1fr;padding:9px 0;border-bottom:1px solid var(--hair);font-size:15px}
+.static-ol li:last-child{border-bottom:0}
+.static-ol li::before{content:counter(m,decimal-leading-zero);font-family:var(--mono);font-size:10.5px;color:var(--mute);padding-top:4px}
+
+/* contact */
+.contact{padding-bottom:48px}
+.contact-row{margin-top:24px;display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--ink);border-bottom:1px solid var(--rule)}
+.contact-row a{display:block;padding:20px 0;text-decoration:none;min-width:0}
+.contact-row a+a{padding-left:22px;border-left:1px solid var(--rule)}
+.contact-row b{display:block;font-family:var(--serif);font-weight:700;font-size:clamp(18px,2.2vw,24px);margin-top:6px;overflow-wrap:anywhere}
+.contact-row a:hover b{text-decoration:underline;text-underline-offset:5px}
+footer{border-top:1px solid var(--rule);padding:20px 0 40px;font-size:13px;color:var(--mute)}
+footer p+p{margin-top:8px}
+footer a{color:var(--mute)}
+
+@media (max-width:860px){
+  .hero-grid{grid-template-columns:1fr;gap:32px}
+  .contents{max-width:420px}
+  .method li{grid-template-columns:40px minmax(0,1fr)}
+  .method span.e{grid-column:2}
+  .mock-body{grid-template-columns:1fr}
+  .mtabs{border-right:0;border-bottom:1px solid var(--rule)}
+}
+@media (max-width:620px){
+  header nav ul{gap:14px}
+  .brand{font-size:15px}
+  .hero{padding-top:36px}
+  .strip{grid-template-columns:1fr}
+  .strip div,.strip div+div{padding:14px 0;border-left:0}
+  .strip div+div{border-top:1px solid var(--rule)}
+  .row>summary{grid-template-columns:24px minmax(0,1fr);gap:12px}
+  .meta{grid-column:2;text-align:left;white-space:normal;display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline}
+  .meta strong{display:inline}.meta em{display:inline;margin-top:0}
+  .case-top{padding:16px 16px 14px}
+  dl.facts{padding:2px 16px}
+  dl.facts div{grid-template-columns:1fr;gap:2px}
+  .flow{grid-template-columns:1fr}
+  .flow>div{padding:14px 16px 16px}
+  .flow>div+div{border-left:0;border-top:1px solid var(--rule)}
+  .bento{grid-template-columns:1fr}
+  .cell.big{grid-row:auto}
+  .tools{grid-template-columns:1fr;gap:4px}
+  .band{padding:4px 14px 18px}
+  .contact-row{grid-template-columns:1fr}
+  .contact-row a+a{padding-left:0;border-left:0;border-top:1px solid var(--rule)}
+}
+@media (max-width:400px){header nav li:nth-child(2){display:none}}
+@media print{
+  header.top nav,.ctas,.contents,.mock,.skip,.filter,.meta em{display:none!important}
+  body{background:#fff}
+  section{padding-top:32px}
+  .case,.idea{break-inside:avoid}
+  .cell.big{background:#fff;color:var(--ink);border-color:var(--ink)}
+  .cell.big .mono,.cell p{color:var(--mute)}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="w">
+    <a class="brand" href="#top">Hemanth Vallamkonda</a>
+    <nav aria-label="Primary"><ul>
+      <li><a href="#builds">Builds</a></li>
+      <li><a href="#method">Method</a></li>
+      <li><a href="#ideas">Ideas</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul></nav>
+  </div>
+</header>
+
+<main id="main">
+<div class="w" id="top">
+  <div class="hero">
+    <div class="hero-grid">
+      <div>
+        <p class="mono eyebrow">Hemanth Vallamkonda · Applied AI builder · London</p>
+        <h1>I learn how a team works, build the simple tool they actually use, write it down, and train them to run it.</h1>
+        <p class="mono role">AI Solutions Consultant · MTest Labs and Atelier di Venice · from Dec 2025</p>
+        <p class="lede">UK finance-operations background. I simplify the process first, then automate it with tools the business already has, and keep a person accountable for every step that matters.</p>
+        <div class="ctas">
+          <a class="btn solid" href="#builds">See what I've built</a>
+          <a class="btn line" href="mailto:vallamkondahemanth@gmail.com">Email me</a>
+          <span class="status">London based, right to work in the UK</span>
+        </div>
+        <p class="small-note">Five builds below. Each one says what I built, why, how, who uses it, and what changed.</p>
+      </div>
+      <nav class="contents" aria-label="Contents">
+        <p class="mono">Contents</p>
+        <ol>
+          <li><a href="#builds">What I've built<span>01</span></a></li>
+          <li><a href="#earlier">Earlier work<span>02</span></a></li>
+          <li><a href="#method">How I work<span>03</span></a></li>
+          <li><a href="#ideas">Ideas for Shanly<span>04</span></a></li>
+          <li><a href="#contact">Contact<span>05</span></a></li>
+        </ol>
+      </nav>
+    </div>
+
+    <div class="strip" role="list" aria-label="Results">
+      <div role="listitem"><b>1 to 3 hrs</b><span class="mono">MTest Labs · test design, was a full day or 2 to 3 days</span></div>
+      <div role="listitem"><b>Dozens</b><span class="mono">Atelier di Venice · workflows automated across ops, marketing, finance</span></div>
+      <div role="listitem"><b>Approx. 25%</b><span class="mono">Bnk To The Future · faster turnaround across 100+ cases</span></div>
+    </div>
+  </div>
+
+  <!-- 01 BUILDS -->
+  <section id="builds" aria-labelledby="h-builds">
+    <p class="mono sec"><span>01</span><i aria-hidden="true"></i><span class="t">What I've built</span></p>
+    <h2 id="h-builds">An index of five builds. Open any row to see the full case.</h2>
+    <p class="intro">Client work is described at the level I am allowed to share. Flows are simplified and illustrative, not screenshots of client systems.</p>
+
+    <div class="filter" id="filter" hidden role="group" aria-label="Filter builds">
+      <span>Show:</span>
+      <button type="button" data-f="all" aria-pressed="true">All</button>
+      <button type="button" data-f="client" aria-pressed="false">Client build</button>
+      <button type="button" data-f="employed" aria-pressed="false">Employed role</button>
+      <button type="button" data-f="own" aria-pressed="false">Own work</button>
+    </div>
+
+    <div class="index" id="index">
+
+      <details class="row" id="mtest" data-k="client" open>
+        <summary>
+          <span class="sq" aria-hidden="true">01</span>
+          <span><span class="ttl">MTest Labs: a test design tool the testers run themselves</span><span class="tg">client build · multi-agent · knowledge assistant · review gate</span></span>
+          <span class="meta"><strong>1 to 3 hrs</strong>from Dec 2025<em aria-hidden="true"></em></span>
+        </summary>
+        <article class="case" aria-label="MTest Labs case">
+          <div class="case-top">
+            <p class="mono prov">Client build · Software testing firm · from Dec 2025</p>
+            <h3>An internal tool with its own interface that drafts tailored test scenarios and cases</h3>
+            <p class="one">Test design used to take a full 8 hour day, or 2 to 3 days on larger projects.</p>
+          </div>
+          <dl class="facts">
+            <div><dt>What</dt><dd>A tool that gathers full project context from the firm's documentation and a structured question flow, then generates tailored test scenarios and cases. I also added a conversational assistant so the team can query the firm's knowledge.</dd></div>
+            <div><dt>Why</dt><dd>Test design was manual and slow: a full 8 hour day, or 2 to 3 days on larger projects.</dd></div>
+            <div><dt>How</dt><dd>A staged, multi-agent orchestration grounded in the firm's own test-case library and historical issue logs. Refined through build, test and improve cycles with the testers.</dd></div>
+            <div><dt>Who uses it</dt><dd>The testers. I trained the team to run it themselves and left documentation.</dd></div>
+            <div class="r"><dt>Result</dt><dd>Test design cut to 1 to 3 hours of supervised draft-and-review.</dd></div>
+          </dl>
+          <div class="flow">
+            <div><span class="mono">Before</span><ol><li>Tester reads the project documentation</li><li>Writes scenarios and cases by hand</li><li>A full 8 hour day, or 2 to 3 days on larger projects</li></ol></div>
+            <div><span class="mono">After</span><ol><li>Documentation plus a structured question flow</li><li>Staged agents draft from the firm's library and issue logs</li><li><span class="gate">Person reviews:</span> a tester approves every output before anything reaches a client</li><li>1 to 3 hours of supervised draft-and-review</li></ol></div>
+          </div>
+        </article>
+      </details>
+
+      <details class="row" id="atelier" data-k="client">
+        <summary>
+          <span class="sq" aria-hidden="true">02</span>
+          <span><span class="ttl">Atelier di Venice: one connected system from enquiry to delivery</span><span class="tg">client build · low-code · APIs · Power BI</span></span>
+          <span class="meta"><strong>Dozens of workflows</strong>from Dec 2025<em aria-hidden="true"></em></span>
+        </summary>
+        <article class="case" aria-label="Atelier di Venice case">
+          <div class="case-top">
+            <p class="mono prov">Client build · Interior design business · from Dec 2025</p>
+            <h3>Automated workflows across operations, marketing and finance, plus a Power BI management view</h3>
+            <p class="one">Built for a small, varied business run by a non-technical owner.</p>
+          </div>
+          <dl class="facts">
+            <div><dt>What</dt><dd>Dozens of workflows across operations, marketing (including lead follow-up) and finance, connecting steps that had been handled separately. A Power BI dashboard replaced a rekeyed monthly management pack.</dd></div>
+            <div><dt>Why</dt><dd>Operations, marketing and finance steps were handled separately and manually, from first enquiry through to delivery.</dd></div>
+            <div><dt>How</dt><dd>Mapped the business end to end first, then connected the steps with low-code automation and APIs. Set an autonomy boundary: low-risk steps run alone, consequential client and financial steps stay supervised.</dd></div>
+            <div><dt>Who uses it</dt><dd>The owner. I trained the owner to run the system day to day.</dd></div>
+            <div class="r"><dt>Result</dt><dd>Dozens of workflows automated. The monthly pack is a Power BI dashboard instead of a rekeying job.</dd></div>
+          </dl>
+          <div class="flow">
+            <div><span class="mono">Before</span><ol><li>Enquiry, operations, marketing and finance handled as separate steps</li><li>Each step done by hand</li><li>Monthly management pack rekeyed</li></ol></div>
+            <div><span class="mono">After</span><ol><li>Business mapped end to end, steps connected</li><li>Low-risk steps run on their own</li><li><span class="gate">Person reviews:</span> consequential client and financial steps stay supervised</li><li>Power BI dashboard for the monthly view</li></ol></div>
+          </div>
+        </article>
+      </details>
+
+      <details class="row" id="btf" data-k="employed">
+        <summary>
+          <span class="sq" aria-hidden="true">03</span>
+          <span><span class="ttl">Bnk To The Future: simplify the routing before automating it</span><span class="tg">employed role · process redesign · templates · training</span></span>
+          <span class="meta"><strong>Approx. 25% faster</strong>Sep 2023 to Sep 2024<em aria-hidden="true"></em></span>
+        </summary>
+        <article class="case" aria-label="Bnk To The Future case">
+          <div class="case-top">
+            <p class="mono prov">Employed role · Regulated investment platform · Operations and Risk Analyst</p>
+            <h3>Case routing, triage and escalation redesigned across 100+ cases</h3>
+            <p class="one">The question was the one in your advert: is there now a simpler or better way?</p>
+          </div>
+          <dl class="facts">
+            <div><dt>What</dt><dd>A redesigned routing, triage and escalation process, templates, management and risk-committee reporting, and training for colleagues.</dd></div>
+            <div><dt>Why</dt><dd>To get cases through faster.</dd></div>
+            <div><dt>How</dt><dd>Redesigned routing, triage and escalation across 100+ cases, simplifying the process before automating any of it.</dd></div>
+            <div><dt>Who uses it</dt><dd>The templates were adopted across the firm. I developed training for colleagues.</dd></div>
+            <div class="r"><dt>Result</dt><dd>Turnaround down approximately 25%.</dd></div>
+          </dl>
+          <div class="flow">
+            <div><span class="mono">Order of work</span><ol><li>Map how cases are routed, triaged and escalated</li><li>Simplify the process</li><li>Then automate</li></ol></div>
+            <div><span class="mono">Handover</span><ol><li>Templates adopted across the firm</li><li>Training for colleagues</li><li>Management and risk-committee reporting</li></ol></div>
+          </div>
+        </article>
+      </details>
+
+      <details class="row" id="kuruvella" data-k="employed">
+        <summary>
+          <span class="sq" aria-hidden="true">04</span>
+          <span><span class="ttl">Kuruvella &amp; Co.: the monthly reporting pack, automated in Excel</span><span class="tg">employed role · Excel · VBA · 30+ client entities</span></span>
+          <span class="meta"><strong>Approx. 35% less prep</strong>Sep 2021 to Aug 2023<em aria-hidden="true"></em></span>
+        </summary>
+        <article class="case" aria-label="Kuruvella and Co. case">
+          <div class="case-top">
+            <p class="mono prov">Employed role · Accountancy practice</p>
+            <h3>Excel dashboards and VBA macros for a recurring pack across 30+ client entities</h3>
+          </div>
+          <dl class="facts">
+            <div><dt>What</dt><dd>Excel dashboards and VBA macros that automated the recurring monthly reporting pack.</dd></div>
+            <div><dt>Why</dt><dd>The same pack was prepared every month across 30+ client entities: a repetitive task.</dd></div>
+            <div><dt>How</dt><dd>Automated the recurring steps with VBA macros and put the output into Excel dashboards.</dd></div>
+            <div><dt>Who uses it</dt><dd>Built in Excel, a tool the practice already had, so there was no new software to adopt.</dd></div>
+            <div class="r"><dt>Result</dt><dd>Report preparation time down approximately 35%.</dd></div>
+          </dl>
+        </article>
+      </details>
+
+      <details class="row" id="orchestration" data-k="own">
+        <summary>
+          <span class="sq" aria-hidden="true">05</span>
+          <span><span class="ttl">Governed agent orchestration: nothing changes without a person approving it</span><span class="tg">own work · review gate · audit trail · prompt library</span></span>
+          <span class="meta"><strong>Pattern</strong>own work<em aria-hidden="true"></em></span>
+        </summary>
+        <article class="case" aria-label="Governed agent orchestration">
+          <div class="case-top">
+            <p class="mono prov">Own work · Pattern, no headline number</p>
+            <h3>A multi-step agent pipeline that researches, structures, analyses and drafts</h3>
+          </div>
+          <dl class="facts">
+            <div><dt>What</dt><dd>A multi-step agent pipeline, plus a reusable, evaluated prompt and AI-skills library.</dd></div>
+            <div><dt>Why</dt><dd>Agents are useful only if a person stays in control and can see what happened.</dd></div>
+            <div><dt>How</dt><dd>Changes are staged at a human-review gate, and every step is kept in a full audit trail.</dd></div>
+            <div><dt>Who uses it</dt><dd>I do. The same idea, a person approving consequential steps, runs through the client builds above.</dd></div>
+            <div class="r"><dt>Result</dt><dd>Pattern: staged steps, a review gate and a full record.</dd></div>
+          </dl>
+          <div class="flow">
+            <div><span class="mono">Pipeline</span><ol><li>Research</li><li>Structure</li><li>Analyse</li><li>Draft</li></ol></div>
+            <div><span class="mono">Control</span><ol><li>Changes staged, not applied</li><li><span class="gate">Person reviews:</span> approve or reject</li><li>Full audit trail of each step</li></ol></div>
+          </div>
+        </article>
+      </details>
+
+    </div>
+    <p class="empty mono" id="empty" hidden>No builds in this group.</p>
+  </section>
+
+  <!-- 02 EARLIER -->
+  <section id="earlier" aria-labelledby="h-earlier">
+    <p class="mono sec"><span>02</span><i aria-hidden="true"></i><span class="t">Earlier work</span></p>
+    <h2 id="h-earlier">AirTM: manual spreadsheet tracking replaced with SQL and dashboards.</h2>
+    <p class="intro">Financial Operations Analyst, payments, Mar 2019 to Aug 2021, remote.</p>
+    <div class="bento">
+      <div class="cell big"><span class="mono">Backlog cleared</span><div><b>150 cases</b><p>cleared in three weeks, after replacing manual spreadsheet tracking with SQL queries and dashboards.</p></div></div>
+      <div class="cell"><b>Approx. 30%</b><span class="mono">Standing backlog down</span></div>
+      <div class="cell"><b>95%+</b><span class="mono">Service level held</span></div>
+      <div class="cell"><b>Approx. 25%</b><span class="mono">False positives down</span></div>
+    </div>
+    <p class="after-bento">Fixes were documented as standard procedures.</p>
+  </section>
+
+  <!-- 03 METHOD -->
+  <section id="method" aria-labelledby="h-method">
+    <p class="mono sec"><span>03</span><i aria-hidden="true"></i><span class="t">How I work</span></p>
+    <h2 id="h-method">The simplest thing that works, used by the people it is for.</h2>
+    <ol class="method">
+      <li><span class="k">01</span><b>Spend time with the team</b><span class="e">Atelier: mapped the business end to end before building.</span></li>
+      <li><span class="k">02</span><b>Find the repetitive step</b><span class="e">Kuruvella: the same pack every month across 30+ entities.</span></li>
+      <li><span class="k">03</span><b>Simplify before automating</b><span class="e">Bnk To The Future: redesigned the routing first.</span></li>
+      <li><span class="k">04</span><b>Build with what the business has</b><span class="e">Excel at Kuruvella, Power BI at Atelier.</span></li>
+      <li><span class="k">05</span><b>Test with the people who use it</b><span class="e">MTest: build, test and improve cycles with the testers.</span></li>
+      <li><span class="k">06</span><b>Keep a person accountable</b><span class="e">A review step on anything consequential.</span></li>
+      <li><span class="k">07</span><b>Document, train, hand over</b><span class="e">The MTest team and the Atelier owner run their systems themselves.</span></li>
+    </ol>
+    <div class="tools">
+      <p class="mono">Tools I use</p>
+      <p>Microsoft 365, Copilot, Copilot Studio, Power Automate, Power Platform, SharePoint, Power BI, Excel (Power Query, VBA), SQL, APIs, n8n, Zapier, Make, Claude, ChatGPT, Gemini, Python and JavaScript through AI-assisted development.</p>
+    </div>
+  </section>
+
+  <!-- 04 IDEAS -->
+  <section id="ideas" aria-labelledby="h-ideas">
+    <p class="mono sec"><span>04</span><i aria-hidden="true"></i><span class="t">Ideas for Shanly</span></p>
+    <h2 id="h-ideas">Three small starting points, one per business.</h2>
+    <p class="intro">I do not know your internal systems. Each idea uses Microsoft 365 tools you already have, and each starting point is an assumption to check with the team.</p>
+
+    <div class="band">
+      <article class="idea" aria-labelledby="h-i1">
+        <p class="label">Illustrative: how I would approach this in my first months, to be agreed with the Deputy Chairman</p>
+        <h3 id="h-i1">Sorbon Estates: maintenance requests</h3>
+        <p class="ctx">Sorbon looks after marinas, offices, shops, industrial units and parking. One request route would let a tenant report an issue once and see where it is.</p>
+        <div class="flow">
+          <div><span class="mono">Assumed starting point, to check with the team</span><ol><li>Requests arrive by email or phone</li><li>Tracked by hand</li><li>Status chased one by one</li></ol></div>
+          <div><span class="mono">Approach</span><ol><li>Microsoft Form to a SharePoint list</li><li>Power Automate routes by property and type</li><li><span class="gate">Person reviews:</span> the property manager approves the job</li><li>Teams notification, Power BI status view</li></ol></div>
+        </div>
+
+        <div class="mock" id="mockup" aria-labelledby="h-mock">
+          <div class="mock-top"><span class="mono" id="h-mock">Mock-up · Sample data · Sorbon maintenance request</span><span class="mono" id="mlive" aria-live="polite">6 steps</span></div>
+          <ol class="static-ol" id="mock-static">
+            <li>Tenant submits a Microsoft Form (sample: shore power point not working at a marina berth).</li>
+            <li>The form adds a row to a SharePoint list with a reference.</li>
+            <li>Power Automate routes it to the right property manager.</li>
+            <li><span><span class="gate">Person reviews:</span> the property manager approves the job and contractor.</span></li>
+            <li>Teams notifies the contractor, and the tenant gets an update.</li>
+            <li>Power BI shows open, approved and closed requests.</li>
+          </ol>
+          <div id="mock-ui" hidden>
+            <div class="mock-body">
+              <div class="mtabs" role="tablist" aria-orientation="vertical" aria-label="Request steps" id="mtabs"></div>
+              <div class="mpanel" id="mpanel" role="tabpanel" tabindex="0"></div>
+            </div>
+            <div class="mfoot"><button type="button" id="mprev">Back</button><div class="bar" aria-hidden="true"><i id="mbar"></i></div><button type="button" id="mnext">Next step</button></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="idea" aria-labelledby="h-i2">
+        <p class="label">Illustrative: how I would approach this in my first months, to be agreed with the Deputy Chairman</p>
+        <h3 id="h-i2">Shanly Homes: one weekly update report</h3>
+        <p class="ctx">A repetitive site or sales admin task, for example collating weekly updates into one report.</p>
+        <div class="flow">
+          <div><span class="mono">Assumed starting point, to check with the team</span><ol><li>Updates come from several people in different formats</li><li>Collated into one report by hand</li></ol></div>
+          <div><span class="mono">Approach</span><ol><li>One short update form or SharePoint list</li><li>Copilot drafts the weekly report</li><li><span class="gate">Person reviews:</span> the owner edits and approves it</li><li>Shared in Teams</li></ol></div>
+        </div>
+      </article>
+
+      <article class="idea" aria-labelledby="h-i3">
+        <p class="label">Illustrative: how I would approach this in my first months, to be agreed with the Deputy Chairman</p>
+        <h3 id="h-i3">The Shanly Foundation: grant request intake and tracking</h3>
+        <p class="ctx">A simple route for grant requests, so each one is logged, acknowledged and easy to follow.</p>
+        <div class="flow">
+          <div><span class="mono">Assumed starting point, to check with the team</span><ol><li>Requests arrive in different ways</li><li>Progress tracked by hand</li></ol></div>
+          <div><span class="mono">Approach</span><ol><li>Microsoft Form to a SharePoint list</li><li>Automatic acknowledgement</li><li><span class="gate">Person reviews:</span> the decision stays with the people responsible</li><li>Power BI tracking view</li></ol></div>
+        </div>
+      </article>
+
+      <article class="idea" aria-labelledby="h-i4">
+        <p class="label">Illustrative: how I would approach this in my first months, to be agreed with the Deputy Chairman</p>
+        <h3 id="h-i4">Build, buy or simplify: a one-page check for existing software</h3>
+        <ol class="check">
+          <li>What job does this software do, and who does that job today?</li>
+          <li>Can the step be removed or simplified before any tool is chosen?</li>
+          <li>Can Microsoft 365, Power Platform or Copilot already do it?</li>
+          <li>Can the IT Manager and external IT partners support it?</li>
+          <li>Can we trial it small with the people who will use it?</li>
+          <li>Who owns it, and where is it documented?</li>
+        </ol>
+      </article>
+    </div>
+  </section>
+
+  <!-- 05 CONTACT -->
+  <section class="contact" id="contact" aria-labelledby="h-contact">
+    <p class="mono sec"><span>05</span><i aria-hidden="true"></i><span class="t">Contact</span></p>
+    <h2 id="h-contact">Happy to walk you through any of these.</h2>
+    <div class="contact-row">
+      <a href="mailto:vallamkondahemanth@gmail.com"><span class="mono">Email</span><b>vallamkondahemanth@gmail.com</b></a>
+      <a href="tel:+447553909828"><span class="mono">Phone</span><b>+44 7553 909828</b></a>
+    </div>
+  </section>
+</div>
+</main>
+
+<footer>
+  <div class="w">
+    <p>This is my own page about how I would help Shanly Group. It is not an official Shanly page and I do not work there.</p>
+    <p>Company facts from: <a href="https://www.sorbonestates.com/company-history/">Sorbon Estates company history</a>, <a href="https://businessmag.co.uk/features/celebrating-50-years-of-award-winning-housebuilding/">Business Magazine, 50 years of housebuilding</a>, <a href="https://shanlyfoundation.com/">The Shanly Foundation</a>.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  /* quiet filter: registry.directory, only with JS */
+  var f=document.getElementById('filter'),rows=[].slice.call(document.querySelectorAll('#index .row')),empty=document.getElementById('empty');
+  if(f){f.hidden=false;var bs=[].slice.call(f.querySelectorAll('button'));
+    bs.forEach(function(b){b.addEventListener('click',function(){var k=b.getAttribute('data-f'),n=0;
+      bs.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+      rows.forEach(function(r){var show=k==='all'||r.getAttribute('data-k')===k;r.hidden=!show;if(show)n++});
+      empty.hidden=n>0;});});}
+  /* open the row a link points to */
+  function openHash(){var h=location.hash.slice(1);if(!h)return;var el=document.getElementById(h);if(el&&el.tagName==='DETAILS')el.open=true}
+  window.addEventListener('hashchange',openHash);openHash();
+  window.addEventListener('beforeprint',function(){rows.forEach(function(r){r.hidden=false;r.open=true})});
+
+  /* mock-up */
+  var steps=[
+    {t:"Tenant submits a request",p:"A short Microsoft Form: where, what, and a photo.",r:[["Location","Marina berth 14"],["Issue","Shore power point not working"],["Contact","Sample tenant"]]},
+    {t:"Logged in SharePoint",p:"The form adds a row to one list, with a reference everyone can use.",r:[["Reference","MR-0001"],["Status","New"]]},
+    {t:"Routed by Power Automate",p:"Rules send it to the manager for that property and issue type.",r:[["Routed to","Marina property manager"],["Status","Awaiting approval"]]},
+    {t:"Person reviews",p:"The property manager approves the job and the contractor. Nothing is booked without this step.",r:[["Decision","Approved"],["Contractor","Sample electrical contractor"]]},
+    {t:"Teams notification",p:"The contractor is notified in Teams and the tenant gets an update.",r:[["Status","Booked"],["Tenant update","Sent"]]},
+    {t:"Power BI status view",p:"Open, approved and closed requests in one view for the team.",r:[["Open","3 (sample)"],["Closed this week","5 (sample)"]]}
+  ];
+  var ui=document.getElementById('mock-ui');if(!ui)return;
+  document.getElementById('mock-static').hidden=true;ui.hidden=false;
+  var tabs=document.getElementById('mtabs'),panel=document.getElementById('mpanel'),live=document.getElementById('mlive'),bar=document.getElementById('mbar'),prev=document.getElementById('mprev'),next=document.getElementById('mnext'),cur=0,btns=[];
+  steps.forEach(function(s,i){var b=document.createElement('button');b.type='button';b.setAttribute('role','tab');b.id='mt'+i;b.setAttribute('aria-controls','mpanel');b.innerHTML='<span>0'+(i+1)+'</span>'+s.t;b.addEventListener('click',function(){go(i)});b.addEventListener('keydown',key);tabs.appendChild(b);btns.push(b)});
+  function esc(x){return x.replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+  function go(i,focus){cur=i;btns.forEach(function(b,j){b.setAttribute('aria-selected',j===i?'true':'false');b.tabIndex=j===i?0:-1});
+    var s=steps[i],rows2=s.r.map(function(r){return '<tr><th scope="row">'+esc(r[0])+'</th><td>'+esc(r[1])+'</td></tr>'}).join('');
+    var head=i===3?'<h4 class="gate">Person reviews</h4>':'<h4>'+esc(s.t)+'</h4>';
+    panel.setAttribute('aria-labelledby','mt'+i);
+    panel.innerHTML=head+'<p>'+esc(s.p)+'</p><table><caption class="mono">Sample data</caption>'+rows2+'</table>';
+    live.textContent='Step '+(i+1)+' of '+steps.length;bar.style.width=((i+1)/steps.length*100)+'%';
+    prev.disabled=i===0;next.disabled=i===steps.length-1;if(focus)btns[i].focus();}
+  function key(e){var k=e.key,n=null;if(k==='ArrowDown'||k==='ArrowRight')n=(cur+1)%steps.length;else if(k==='ArrowUp'||k==='ArrowLeft')n=(cur-1+steps.length)%steps.length;else if(k==='Home')n=0;else if(k==='End')n=steps.length-1;if(n!==null){e.preventDefault();go(n,true)}}
+  prev.addEventListener('click',function(){if(cur>0)go(cur-1)});next.addEventListener('click',function(){if(cur<steps.length-1)go(cur+1)});
+  go(0);
+})();
+</script>
+</body>
+</html>
