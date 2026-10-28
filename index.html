@@ -62,8 +62,8 @@ a{color:var(--accent)}
 </header>
 <section class="intro">
   <h2>Wider pass: registries and component libraries, not only finished portfolios.</h2>
-  <p>Panel 01 to 02 stay. Below that: live embeds of UI platforms (21st, Magic UI, Aceternity, shadcn, React Bits, registry.directory, and more), then concrete component preview cards from 21st (stats bento, timelines, heroes). Mobbin MCP is paid; browser pass notes that.</p>
-  <p class="note">Belief: finds how a team works, builds tools busy non-technical people use, documents them, gets adoption.</p>
+  <p>Panel 01–02 stay. Section C now has real browser screenshots of 17 platform homes (21st, Magic UI, Aceternity, registry.directory, shadcn, Tailark, Recent.design, Land-book, Mobbin, Untitled UI, Cult UI, HyperUI, Shadcnblocks). Closest warm-paper language: <strong>registry.directory</strong>. Section D keeps concrete 21st component previews.</p>
+  <p class="note">Belief: finds how a team works, builds tools busy non-technical people use, documents them, gets adoption. Takeaways: hero = mono eyebrow + claim + dual CTA + hairline stats (21st hero-15); proof chips = stats-bento; case index rows = registry.directory.</p>
 </section>
 
 <section class="sec" id="proposed"><h2>A. Proposed board</h2><p>Our Board Pack direction from your facts.</p></section>
@@ -72,7 +72,7 @@ a{color:var(--accent)}
 <section class="sec" id="sites"><h2>B. Live portfolio / product sites</h2><p>Finished sites to steal craft from. Blocked iframes show screenshots.</p></section>
 <main class="deck" id="deck-sites"></main>
 
-<section class="sec" id="platforms"><h2>C. Component libraries and registries</h2><p>The “codebase platforms” pass: browse these for patterns, then adapt into paper-notebook craft.</p></section>
+<section class="sec" id="platforms"><h2>C. Component libraries and registries</h2><p>Browser-captured homes. Embed when the site allows; otherwise screenshot is the poster. registry.directory is the closest cream + mono + hairline list language for case sheets.</p></section>
 <main class="deck" id="deck-platforms"></main>
 
 <section class="sec" id="comps"><h2>D. Specific components (21st.dev)</h2><p>Preview cards. Open the live component page. Prefer uneven proof ledgers and timelines over glass / mascot / neon.</p></section>
@@ -91,22 +91,30 @@ const sites=[
 {id:"notion",name:"notion.com",url:"https://www.notion.com/",shot:"shots/notion.png",embed:false,badge:"Hero proof",badgeClass:"blocked",borrow:"Real screenshot under headline."}
 ];
 const platforms=[
-{id:"p21",name:"21st.dev",url:"https://21st.dev/",shot:"",embed:true,badge:"Registry",badgeClass:"plat",borrow:"12k+ shadcn-compatible components. Best source for bento, heroes, timelines we can adapt."},
-{id:"pmagic",name:"Magic UI",url:"https://magicui.design/",shot:"",embed:true,badge:"Motion / shadcn",badgeClass:"plat",borrow:"Polished animated marketing pieces. Take restraint; avoid flashy for Deputy Chairman."},
-{id:"paceter",name:"Aceternity UI",url:"https://ui.aceternity.com/",shot:"",embed:true,badge:"Effects",badgeClass:"plat",borrow:"Showpiece heroes/cards. Mostly skip for this job; note patterns then calm them down."},
-{id:"pshad",name:"shadcn/ui",url:"https://ui.shadcn.com/",shot:"",embed:true,badge:"Primitives",badgeClass:"plat",borrow:"Base primitives and blocks. Use for structure, not as the visual brand."},
-{id:"pbits",name:"React Bits",url:"https://reactbits.dev/",shot:"",embed:true,badge:"Free motion",badgeClass:"plat",borrow:"Large free animated set. Cherry-pick subtle motion only."},
-{id:"preg",name:"registry.directory",url:"https://registry.directory/",shot:"",embed:true,badge:"Index of registries",badgeClass:"plat",borrow:"Map of shadcn registries (Magic, Cult, Kokonut, Tailark, AI Elements…). Jump-off for more packs."},
-{id:"pgodly",name:"Godly",url:"https://godly.website/",shot:"",embed:true,badge:"Award sites",badgeClass:"plat",borrow:"Curated high-craft sites. Hunt portfolio / editorial layouts."},
-{id:"pland",name:"Land-book",url:"https://land-book.com/",shot:"",embed:true,badge:"Landing gallery",badgeClass:"plat",borrow:"Section-level landing inspiration. Filter for light / editorial."},
-{id:"pmob",name:"Mobbin",url:"https://mobbin.com/",shot:"",embed:true,badge:"Paid wall",badgeClass:"blocked",borrow:"Best real-product UI library. MCP needs paid plan; use browser if signed in, else skip for now."}
+{id:"preg",name:"registry.directory",url:"https://registry.directory/",shot:"shots/platforms/05-registry-directory.png",embed:true,badge:"Best paper fit",badgeClass:"best",borrow:"Cream paper, mono type, hairline rules, list rows with tags + right-aligned meta. Steal for case-sheet / project index. Also maps other shadcn registries (studio, Craft, Blocks, Eased, kokonut, Lexington, PaceUI)."},
+{id:"p21",name:"21st.dev",url:"https://21st.dev/",shot:"shots/platforms/01-21st-home.png",embed:true,badge:"Registry",badgeClass:"plat",borrow:"Hero: one-line promise + 2 CTAs + frame. Sidebar taxonomy + ranked rails map to Selected work. Copy-prompt on each component."},
+{id:"p21stats",name:"21st · Stats Bento",url:"https://21st.dev/@uilayout.contact/components/stats-bento",shot:"shots/platforms/13-21st-stats-bento.png",embed:true,badge:"Proof chips",badgeClass:"plat",borrow:"Mixed-size bento: big numeral + tiny uppercase label. Direct model for proof chips. Reskin to cream + ink + one accent."},
+{id:"p21feat",name:"21st · Feature Bento",url:"https://21st.dev/@uilayout.contact/components/feature-bento",shot:"shots/platforms/14-21st-feature-bento.png",embed:true,badge:"Case overview",badgeClass:"plat",borrow:"Large project tile + metric tiles + Live pill. Steal asymmetry for case sheet overview. Drop saturated blue."},
+{id:"p21hero",name:"21st · Hero-15",url:"https://21st.dev/@shadcn/components/hero-15",shot:"shots/platforms/15-21st-hero-15.png",embed:true,badge:"Hero pattern",badgeClass:"plat",borrow:"Mono eyebrow, oversized measured claim, dual CTA, hairline stat strip. Best Cover map for the paper hero."},
+{id:"pmagic",name:"Magic UI",url:"https://magicui.design/",shot:"shots/platforms/02-magicui-home.png",embed:true,badge:"Motion / shadcn",badgeClass:"plat",borrow:"Showcase row of real portfolio thumbs. Marquee / number ticker / blur-fade / bento / beam. Pick 3–4 calm pieces only."},
+{id:"paceter",name:"Aceternity UI",url:"https://ui.aceternity.com/",shot:"shots/platforms/03-aceternity-home.png",embed:true,badge:"Effects",badgeClass:"plat",borrow:"Avatar-stack proof row + Timeline / Bento / Floating dock. Calm them hard; skip aurora and 3D."},
+{id:"pshad",name:"shadcn/ui",url:"https://ui.shadcn.com/",shot:"shots/platforms/06-shadcn-home.png",embed:true,badge:"Primitives",badgeClass:"plat",borrow:"Pill chips, soft-border cards, tabular numbers. Structure only; warm the cold grays. Theme builder for paper tokens."},
+{id:"ptail",name:"Tailark",url:"https://tailark.com/",shot:"shots/platforms/07-tailark-home.png",embed:true,badge:"Marketing blocks",badgeClass:"plat",borrow:"Hero + logo cloud + sketch heroes. Check Blocks for Hero / Stats / Testimonials. Illustrative line art suits paper."},
+{id:"pgodly",name:"Recent.design (ex-Godly)",url:"https://recent.design/?ref=godly",shot:"shots/platforms/08-godly-redirect-recent-design.png",embed:true,badge:"Award gallery",badgeClass:"plat",borrow:"Godly now redirects here. Masonry with cream branding tiles and hand-drawn work. Filter Websites for portfolio mood."},
+{id:"pland",name:"Land-book",url:"https://land-book.com/",shot:"shots/platforms/09-landbook.png",embed:true,badge:"Landing gallery",badgeClass:"plat",borrow:"Cream / serif heroes (e.g. Cantia). Best mood source with Recent.design for warm paper texture."},
+{id:"puntitled",name:"Untitled UI",url:"https://www.untitledui.com/",shot:"shots/platforms/11-untitledui-home.png",embed:true,badge:"Template kits",badgeClass:"plat",borrow:"Isometric portfolio/team template stacks. Case-sheet rhythm from photo cards + hairline rows. Drop purple accent."},
+{id:"pcult",name:"Cult UI",url:"https://www.cult-ui.com/",shot:"shots/platforms/12-cultui-home.png",embed:true,badge:"shadcn expanded",badgeClass:"plat",borrow:"154 free animated comps; carousel-with-captions for case preview rail. Light off-white + mono captions."},
+{id:"phyper",name:"HyperUI",url:"https://www.hyperui.dev/",shot:"shots/platforms/16-hyperui.png",embed:true,badge:"Plain Tailwind",badgeClass:"plat",borrow:"Free copy-paste HTML (no React lock). Easy chip / timeline / stats for a single-file portfolio."},
+{id:"pblocks",name:"Shadcnblocks",url:"https://www.shadcnblocks.com/",shot:"shots/platforms/17-shadcnblocks.png",embed:true,badge:"Block library",badgeClass:"plat",borrow:"Timeline / Stats / Logos / Testimonials thumbs. Mine Blocks > Timeline for process steps. Premium gated."},
+{id:"pmob",name:"Mobbin",url:"https://mobbin.com/",shot:"shots/platforms/10-mobbin-home.png",embed:false,badge:"Paid wall",badgeClass:"blocked",borrow:"621k screens; Apps/Sites + Flows useful for process timeline. Landing only captured; browsing gated, no signup."},
+{id:"pbits",name:"React Bits",url:"https://www.reactbits.dev/",shot:"shots/platforms/04-reactbits-loading-only.png",embed:false,badge:"Not verified",badgeClass:"blocked",borrow:"WebGL-heavy; screenshot only caught the loader. Known catalog: split text, masonry, scroll reveal. Revisit manually; skip Aurora/Particles."}
 ];
 const comps=[
-{name:"Stats Bento",url:"https://21st.dev/@uilayout.contact/components/stats-bento",img:"shots/comps/stats-bento.png",borrow:"Uneven metric cells. Adapt as proof ledger, not wallpaper."},
-{name:"Feature Bento",url:"https://21st.dev/@uilayout.contact/components/feature-bento",img:"shots/comps/feature-bento.png",borrow:"Hero card + stats. Steal asymmetry."},
+{name:"Stats Bento",url:"https://21st.dev/@uilayout.contact/components/stats-bento",img:"shots/comps/stats-bento.png",borrow:"Big numeral + tiny uppercase label in mixed tiles. Proof-chip model. Reskin cream/ink."},
+{name:"Feature Bento",url:"https://21st.dev/@uilayout.contact/components/feature-bento",img:"shots/comps/feature-bento.png",borrow:"1 large project tile + metric tiles + Live pill. Case overview grid."},
 {name:"About Bento",url:"https://21st.dev/@uilayout.contact/components/about-bento",img:"shots/comps/about-bento.png",borrow:"Impact stats layout for proof strip."},
 {name:"Feature Overview Bento",url:"https://21st.dev/@mohammadshehadeh/components/feature-10",img:"shots/comps/feature-overview-bento.png",borrow:"Hairline lattice + mixed cells. Close to board-pack craft."},
-{name:"Monochrome Stats Hero",url:"https://21st.dev/@shadcn/components/hero-15",img:"shots/comps/monochrome-stats-hero.webp",borrow:"Oversized claim + hairline stat strip. Good for Cover."},
+{name:"Monochrome Stats Hero",url:"https://21st.dev/@shadcn/components/hero-15",img:"shots/comps/monochrome-stats-hero.webp",borrow:"Mono eyebrow + measured claim + dual CTA + hairline stats. Best Cover hero."},
 {name:"Featured Project Hero",url:"https://21st.dev/@ibrandify/components/featured-project-hero",img:"shots/comps/featured-project-hero.png",borrow:"Case as hero. Use for MTest magazine spread."},
 {name:"Paper shaders hero",url:"https://21st.dev/@moazamtrade/components/portfolio-hero-with-paper-shaders",img:"shots/comps/paper-shaders-hero.png",borrow:"Paper texture idea. Keep subtle; no faux stains."},
 {name:"Process Timeline",url:"https://21st.dev/@shadcnui-blocks/components/timeline-05",img:"shots/comps/process-timeline.png",borrow:"Observe→adopt method rail."},
