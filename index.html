@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shanly portfolio · Research deck</title>
+<style>
+:root{--paper:#F7F4EF;--ink:#1A1A18;--hair:#E4DFD6;--mute:#6B6560;--accent:#A84A2F;--forest:#2F5D50}
+*{box-sizing:border-box}body{margin:0;font-family:"Iowan Old Style",Palatino,Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.45}
+a{color:var(--accent)}
+.top{position:sticky;top:0;z-index:20;display:flex;flex-wrap:wrap;gap:12px;align-items:baseline;justify-content:space-between;padding:14px 20px;background:color-mix(in srgb,var(--paper) 92%,white);border-bottom:1px solid var(--hair);backdrop-filter:blur(8px)}
+.top h1{margin:0;font-size:1.05rem;font-weight:600}
+.top p{margin:0;color:var(--mute);font-size:.85rem;font-family:ui-sans-serif,system-ui,sans-serif}
+.nav{display:flex;flex-wrap:wrap;gap:8px;font-family:ui-sans-serif,system-ui,sans-serif;font-size:.75rem}
+.nav a{text-decoration:none;color:var(--ink);border:1px solid var(--hair);border-radius:999px;padding:4px 10px;background:#fff}
+.intro{max-width:800px;padding:28px 20px 8px;margin:0 auto}
+.intro h2{font-size:clamp(1.5rem,3vw,2.1rem);margin:0 0 10px;line-height:1.15}
+.intro p{margin:0 0 10px;color:var(--mute);font-family:ui-sans-serif,system-ui,sans-serif;font-size:.95rem}
+.note{font-family:ui-sans-serif,system-ui,sans-serif;font-size:.8rem;border-left:3px solid var(--forest);padding-left:12px;color:var(--mute)}
+.sec{max-width:1200px;margin:28px auto 8px;padding:0 16px;font-family:ui-sans-serif,system-ui,sans-serif}
+.sec h2{margin:0 0 6px;font-family:"Iowan Old Style",Palatino,Georgia,serif;font-size:1.35rem}
+.sec p{margin:0;color:var(--mute);font-size:.9rem}
+.deck{padding:12px 16px 32px;display:grid;gap:28px;max-width:1200px;margin:0 auto}
+.grid{padding:12px 16px 48px;display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));max-width:1200px;margin:0 auto}
+.card{background:#fff;border:1px solid var(--hair);border-radius:18px;overflow:hidden;box-shadow:0 10px 30px rgba(26,26,24,.04)}
+.meta{display:grid;gap:8px;padding:14px 16px 12px;border-bottom:1px solid var(--hair);font-family:ui-sans-serif,system-ui,sans-serif}
+.meta .row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between}
+.badge{font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--hair);border-radius:999px;padding:3px 8px;color:var(--mute)}
+.badge.best{background:var(--forest);color:#fff;border-color:var(--forest)}
+.badge.ours{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.badge.plat{background:#E8F0ED;color:var(--forest);border-color:#c5d9d0}
+.badge.comp{background:#F5E3DC;color:var(--accent);border-color:#e8c4b6}
+.badge.blocked{background:#f3eee8}
+.meta h3{margin:0;font-family:"Iowan Old Style",Palatino,Georgia,serif;font-size:1.1rem}
+.meta .borrow{margin:0;color:var(--mute);font-size:.82rem}
+.actions a,.actions button{font:inherit;font-size:.78rem;cursor:pointer;border-radius:999px;border:1px solid var(--ink);background:var(--ink);color:#fff;padding:5px 11px;text-decoration:none}
+.actions a.ghost{background:transparent;color:var(--ink)}
+.actions{display:flex;flex-wrap:wrap;gap:8px}
+.frame-wrap{position:relative;background:#efeae2;height:min(68vh,680px)}
+.frame-wrap iframe{width:100%;height:100%;border:0;background:#fff}
+.poster{position:absolute;inset:0;background-size:cover;background-position:top center;display:none;align-items:flex-end;justify-content:center;padding:16px}
+.poster.show{display:flex}
+.poster .fallback{background:rgba(247,244,239,.95);border:1px solid var(--hair);border-radius:12px;padding:12px 14px;max-width:460px;text-align:center;font-family:ui-sans-serif,system-ui,sans-serif;font-size:.85rem}
+.thumb{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;background:#efeae2;border:0}
+.comp .meta{border-bottom:0}
+.footer{max-width:800px;margin:0 auto;padding:0 20px 48px;font-family:ui-sans-serif,system-ui,sans-serif;font-size:.8rem;color:var(--mute)}
+@media(max-width:700px){.frame-wrap{height:58vh}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div>
+    <h1>Shanly portfolio · Research deck</h1>
+    <p>Sites + component platforms + component previews · 28 Oct 2026</p>
+  </div>
+  <nav class="nav">
+    <a href="#proposed">Proposed</a>
+    <a href="#sites">Sites</a>
+    <a href="#platforms">Platforms</a>
+    <a href="#comps">Components</a>
+  </nav>
+</header>
+<section class="intro">
+  <h2>Wider pass: registries and component libraries, not only finished portfolios.</h2>
+  <p>Panel 01 to 02 stay. Below that: live embeds of UI platforms (21st, Magic UI, Aceternity, shadcn, React Bits, registry.directory, and more), then concrete component preview cards from 21st (stats bento, timelines, heroes). Mobbin MCP is paid; browser pass notes that.</p>
+  <p class="note">Belief: finds how a team works, builds tools busy non-technical people use, documents them, gets adoption.</p>
+</section>
+
+<section class="sec" id="proposed"><h2>A. Proposed board</h2><p>Our Board Pack direction from your facts.</p></section>
+<main class="deck" id="deck-proposed"></main>
+
+<section class="sec" id="sites"><h2>B. Live portfolio / product sites</h2><p>Finished sites to steal craft from. Blocked iframes show screenshots.</p></section>
+<main class="deck" id="deck-sites"></main>
+
+<section class="sec" id="platforms"><h2>C. Component libraries and registries</h2><p>The “codebase platforms” pass: browse these for patterns, then adapt into paper-notebook craft.</p></section>
+<main class="deck" id="deck-platforms"></main>
+
+<section class="sec" id="comps"><h2>D. Specific components (21st.dev)</h2><p>Preview cards. Open the live component page. Prefer uneven proof ledgers and timelines over glass / mascot / neon.</p></section>
+<main class="grid" id="deck-comps"></main>
+
+<p class="footer">No Shanly branding. Adapt patterns, do not paste dark SaaS or Lucide soup. Alt-click a frame to toggle screenshot overlay.</p>
+<script>
+const proposed=[{id:"d1",name:"Our proposed · Board Pack Redraft",url:"D1-board-pack-redraft.html",shot:"",embed:true,badge:"Proposed",badgeClass:"ours",borrow:"Paper notebook, FIG rail, proof chips, case sheets, Person reviews gate, illustrative Shanly band."}];
+const sites=[
+{id:"dhruv",name:"dhruvsinghal.codes",url:"https://dhruvsinghal.codes/",shot:"shots/dhruv.png",embed:false,badge:"Best fit site",badgeClass:"best",borrow:"Serif claim, numbered rail, status + evidence chips, proof number."},
+{id:"erbsu",name:"erbsu.com",url:"https://erbsu.com/en",shot:"shots/erbsu.png",embed:true,badge:"Quiet ledger",borrow:"Hairline year/who/outcome rows."},
+{id:"iokq",name:"iokq.com",url:"https://iokq.com/",shot:"shots/iokq.png",embed:true,badge:"Craft only",badgeClass:"blocked",borrow:"Docking windows / Esc boot. Reskin to paper. Skip dark."},
+{id:"giovanni",name:"giovannivons.com/work",url:"https://giovannivons.com/work",shot:"shots/giovanni.png",embed:true,badge:"Case labels",borrow:"Numbered promise labels. Skip dark palette."},
+{id:"stripe",name:"stripe.com",url:"https://stripe.com/",shot:"shots/stripe.png",embed:false,badge:"Hierarchy",badgeClass:"blocked",borrow:"UI fragment inside each tile."},
+{id:"linear",name:"linear.app",url:"https://linear.app/",shot:"shots/linear.png",embed:false,badge:"Fig system",badgeClass:"blocked",borrow:"FIG captions. Skip glow."},
+{id:"notion",name:"notion.com",url:"https://www.notion.com/",shot:"shots/notion.png",embed:false,badge:"Hero proof",badgeClass:"blocked",borrow:"Real screenshot under headline."}
+];
+const platforms=[
+{id:"p21",name:"21st.dev",url:"https://21st.dev/",shot:"",embed:true,badge:"Registry",badgeClass:"plat",borrow:"12k+ shadcn-compatible components. Best source for bento, heroes, timelines we can adapt."},
+{id:"pmagic",name:"Magic UI",url:"https://magicui.design/",shot:"",embed:true,badge:"Motion / shadcn",badgeClass:"plat",borrow:"Polished animated marketing pieces. Take restraint; avoid flashy for Deputy Chairman."},
+{id:"paceter",name:"Aceternity UI",url:"https://ui.aceternity.com/",shot:"",embed:true,badge:"Effects",badgeClass:"plat",borrow:"Showpiece heroes/cards. Mostly skip for this job; note patterns then calm them down."},
+{id:"pshad",name:"shadcn/ui",url:"https://ui.shadcn.com/",shot:"",embed:true,badge:"Primitives",badgeClass:"plat",borrow:"Base primitives and blocks. Use for structure, not as the visual brand."},
+{id:"pbits",name:"React Bits",url:"https://reactbits.dev/",shot:"",embed:true,badge:"Free motion",badgeClass:"plat",borrow:"Large free animated set. Cherry-pick subtle motion only."},
+{id:"preg",name:"registry.directory",url:"https://registry.directory/",shot:"",embed:true,badge:"Index of registries",badgeClass:"plat",borrow:"Map of shadcn registries (Magic, Cult, Kokonut, Tailark, AI Elements…). Jump-off for more packs."},
+{id:"pgodly",name:"Godly",url:"https://godly.website/",shot:"",embed:true,badge:"Award sites",badgeClass:"plat",borrow:"Curated high-craft sites. Hunt portfolio / editorial layouts."},
+{id:"pland",name:"Land-book",url:"https://land-book.com/",shot:"",embed:true,badge:"Landing gallery",badgeClass:"plat",borrow:"Section-level landing inspiration. Filter for light / editorial."},
+{id:"pmob",name:"Mobbin",url:"https://mobbin.com/",shot:"",embed:true,badge:"Paid wall",badgeClass:"blocked",borrow:"Best real-product UI library. MCP needs paid plan; use browser if signed in, else skip for now."}
+];
+const comps=[
+{name:"Stats Bento",url:"https://21st.dev/@uilayout.contact/components/stats-bento",img:"shots/comps/stats-bento.png",borrow:"Uneven metric cells. Adapt as proof ledger, not wallpaper."},
+{name:"Feature Bento",url:"https://21st.dev/@uilayout.contact/components/feature-bento",img:"shots/comps/feature-bento.png",borrow:"Hero card + stats. Steal asymmetry."},
+{name:"About Bento",url:"https://21st.dev/@uilayout.contact/components/about-bento",img:"shots/comps/about-bento.png",borrow:"Impact stats layout for proof strip."},
+{name:"Feature Overview Bento",url:"https://21st.dev/@mohammadshehadeh/components/feature-10",img:"shots/comps/feature-overview-bento.png",borrow:"Hairline lattice + mixed cells. Close to board-pack craft."},
+{name:"Monochrome Stats Hero",url:"https://21st.dev/@shadcn/components/hero-15",img:"shots/comps/monochrome-stats-hero.webp",borrow:"Oversized claim + hairline stat strip. Good for Cover."},
+{name:"Featured Project Hero",url:"https://21st.dev/@ibrandify/components/featured-project-hero",img:"shots/comps/featured-project-hero.png",borrow:"Case as hero. Use for MTest magazine spread."},
+{name:"Paper shaders hero",url:"https://21st.dev/@moazamtrade/components/portfolio-hero-with-paper-shaders",img:"shots/comps/paper-shaders-hero.png",borrow:"Paper texture idea. Keep subtle; no faux stains."},
+{name:"Process Timeline",url:"https://21st.dev/@shadcnui-blocks/components/timeline-05",img:"shots/comps/process-timeline.png",borrow:"Observe→adopt method rail."},
+{name:"How It Works Timeline",url:"https://21st.dev/@olewandowski1/components/how-it-works-2",img:"shots/comps/how-it-works.png",borrow:"Numbered vertical steps with artefacts."},
+{name:"Milestone Timeline",url:"https://21st.dev/@olewandowski1/components/timeline-1",img:"shots/comps/milestone-timeline.png",borrow:"Status badges on a rail (Shipped / In progress)."},
+{name:"Vertical How It Works",url:"https://21st.dev/@ln-dev7/components/how-it-works-02",img:"shots/comps/vertical-how.png",borrow:"Dashed rail + numbered nodes."},
+{name:"Process Pillars",url:"https://21st.dev/@ankitsharma2615/components/process-pillars",img:"shots/comps/process-pillars.png",borrow:"Segmented lifecycle. Calm down for method section."},
+{name:"Task Steps",url:"https://21st.dev/@ddoemonn/components/task-steps",img:"shots/comps/task-steps.png",borrow:"Pending/active/done states for Try-an-example mock."},
+{name:"Hero Block",url:"https://21st.dev/@moumensoliman/components/hero-block-shadcnui",img:"shots/comps/hero-block.png",borrow:"Personal hero structure. Reskin type to serif claim."}
+];
+
+function frameCard(s,i,prefix){
+  const openLabel=s.url.startsWith('http')?'Open live':'Open full board';
+  const frame=s.embed?`<iframe title="${s.name}" loading="lazy" referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin allow-popups allow-forms" src="${s.url}"></iframe>`:'';
+  const posterShow=s.embed?'':' show';
+  const posterBg=s.shot?`style="background-image:url('${s.shot}')"`:`style="background:#efeae2"`;
+  const fallback=s.embed?'If embed fails, Alt-click for screenshot when available, or Open.':'Blocks embedding. Screenshot behind. Use Open live.';
+  return `<article class="card" id="${s.id}">
+    <div class="meta"><div class="row"><span class="badge ${s.badgeClass||''}">${s.badge}</span>
+    <div class="actions"><a href="${s.url}" target="_blank" rel="noopener">${openLabel}</a></div></div>
+    <h3>${prefix}${s.name}</h3><p class="borrow"><strong>Borrow:</strong> ${s.borrow}</p></div>
+    <div class="frame-wrap" data-frame="${s.id}">${frame}
+      <div class="poster${posterShow}" ${posterBg} data-poster="${s.id}"><div class="fallback">${fallback}</div></div>
+    </div></article>`;
+}
+function compCard(c){
+  return `<article class="card comp"><a href="${c.url}" target="_blank" rel="noopener"><img class="thumb" src="${c.img}" alt="${c.name}"></a>
+    <div class="meta"><div class="row"><span class="badge comp">21st component</span>
+    <div class="actions"><a class="ghost" href="${c.url}" target="_blank" rel="noopener">Open on 21st</a></div></div>
+    <h3>${c.name}</h3><p class="borrow"><strong>Borrow:</strong> ${c.borrow}</p></div></article>`;
+}
+document.getElementById('deck-proposed').innerHTML=proposed.map((s,i)=>frameCard(s,i,'01 · ')).join('');
+document.getElementById('deck-sites').innerHTML=sites.map((s,i)=>frameCard(s,i,String(i+2).padStart(2,'0')+' · ')).join('');
+document.getElementById('deck-platforms').innerHTML=platforms.map((s,i)=>frameCard(s,i,'P'+String(i+1).padStart(2,'0')+' · ')).join('');
+document.getElementById('deck-comps').innerHTML=comps.map(compCard).join('');
+document.querySelectorAll('.frame-wrap').forEach(wrap=>{
+  wrap.addEventListener('click',e=>{if(!e.altKey)return;const p=wrap.querySelector('.poster');if(p)p.classList.toggle('show');});
+});
+</script>
+</body>
+</html>
