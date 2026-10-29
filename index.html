@@ -58,11 +58,12 @@ a{color:var(--accent)}
     <a href="#sites">Sites</a>
     <a href="#platforms">Platforms</a>
     <a href="#comps">Components</a>
+    <a href="#product-ui">Product UI</a>
   </nav>
 </header>
 <section class="intro">
   <h2>Wider pass: registries and component libraries, not only finished portfolios.</h2>
-  <p>Panel 01–02 stay. Section C now has real browser screenshots of 17 platform homes (21st, Magic UI, Aceternity, registry.directory, shadcn, Tailark, Recent.design, Land-book, Mobbin, Untitled UI, Cult UI, HyperUI, Shadcnblocks). Closest warm-paper language: <strong>registry.directory</strong>. Section D keeps concrete 21st component previews.</p>
+  <p>Panel 01–02 stay. Section C now has real browser screenshots of 17 platform homes (21st, Magic UI, Aceternity, registry.directory, shadcn, Tailark, Recent.design, Land-book, Mobbin, Untitled UI, Cult UI, HyperUI, Shadcnblocks). Closest warm-paper language: <strong>registry.directory</strong>. Section D keeps concrete 21st component previews. Section E (29 Oct) adds the product-UI direction: Linear, Notion, Raycast, Stripe, Vercel and the component libraries behind preview D.</p>
   <p class="note">Belief: finds how a team works, builds tools busy non-technical people use, documents them, gets adoption. Takeaways: hero = mono eyebrow + claim + dual CTA + hairline stats (21st hero-15); proof chips = stats-bento; case index rows = registry.directory.</p>
 </section>
 
@@ -77,6 +78,9 @@ a{color:var(--accent)}
 
 <section class="sec" id="comps"><h2>D. Specific components (21st.dev)</h2><p>Preview cards. Open the live component page. Prefer uneven proof ledgers and timelines over glass / mascot / neon.</p></section>
 <main class="grid" id="deck-comps"></main>
+
+<section class="sec" id="product-ui"><h2>E. Product UI: Linear, Notion and component libraries</h2><p>New direction after A/B/C were rejected: product workspace craft, not paper. Live sites block iframes, so their browser screenshots are the poster. Component libraries embed where allowed. Height is skipped (site no longer live). The built result is preview D.</p></section>
+<main class="deck" id="deck-productui"></main>
 
 <p class="footer">No Shanly branding. Adapt patterns, do not paste dark SaaS or Lucide soup. Alt-click a frame to toggle screenshot overlay.</p>
 <script>
@@ -108,6 +112,22 @@ const platforms=[
 {id:"pblocks",name:"Shadcnblocks",url:"https://www.shadcnblocks.com/",shot:"shots/platforms/17-shadcnblocks.png",embed:true,badge:"Block library",badgeClass:"plat",borrow:"Timeline / Stats / Logos / Testimonials thumbs. Mine Blocks > Timeline for process steps. Premium gated."},
 {id:"pmob",name:"Mobbin",url:"https://mobbin.com/",shot:"shots/platforms/10-mobbin-home.png",embed:false,badge:"Paid wall",badgeClass:"blocked",borrow:"621k screens; Apps/Sites + Flows useful for process timeline. Landing only captured; browsing gated, no signup."},
 {id:"pbits",name:"React Bits",url:"https://www.reactbits.dev/",shot:"shots/platforms/04-reactbits-loading-only.png",embed:false,badge:"Not verified",badgeClass:"blocked",borrow:"WebGL-heavy; screenshot only caught the loader. Known catalog: split text, masonry, scroll reveal. Revisit manually; skip Aurora/Particles."}
+];
+const productUI=[
+{id:"pud",name:"Preview D · Workspace (built)",url:"previews/preview-d.html",shot:"",embed:true,badge:"Ours",badgeClass:"ours",borrow:"Sidebar shell + document canvas + Linear issue rows that open into Notion property pages + command filter + quiet proof chips + shadcn table for AirTM + callout for Ideas."},
+{id:"pulinear",name:"Linear · product view",url:"https://linear.app/",shot:"shots/product-ui/01b-linear-product.png",embed:false,badge:"Best fit",badgeClass:"best",borrow:"Issue rows: status circle, ID, title, right-aligned meta. Compact density, hairline borders, no shadow, lavender #5E6AD2 only on status and primary button. Skip the near-black hero."},
+{id:"pulinearhome",name:"Linear · home",url:"https://linear.app/",shot:"shots/product-ui/01-linear-home.png",embed:false,badge:"Chrome",badgeClass:"blocked",borrow:"Pill primary button, ghost secondary, sidebar groups. Do not copy the dark theme for a CV page."},
+{id:"punotion",name:"Notion",url:"https://www.notion.com/",shot:"shots/product-ui/02-notion-home.png",embed:false,badge:"Document",badgeClass:"best",borrow:"Sidebar + document canvas, breadcrumb bar, page properties rows, toggle blocks for case detail, callout for the illustrative ideas."},
+{id:"puraycast",name:"Raycast",url:"https://www.raycast.com/",shot:"shots/product-ui/03-raycast-home.png",embed:false,badge:"Command",badgeClass:"blocked",borrow:"Quiet command input with a / key hint above the list. Skip the red gradient."},
+{id:"pustripe",name:"Stripe",url:"https://stripe.com/",shot:"shots/product-ui/05-stripe-home.png",embed:false,badge:"Quiet chrome",badgeClass:"blocked",borrow:"Muted label over a single tabular number. Model for the three proof chips."},
+{id:"puvercel",name:"Vercel",url:"https://vercel.com/",shot:"shots/product-ui/06-vercel-home.png",embed:false,badge:"Whitespace",badgeClass:"blocked",borrow:"Monochrome, generous whitespace, one bordered stat card with internal dividers."},
+{id:"pu21",name:"21st.dev",url:"https://21st.dev/",shot:"shots/product-ui/07-21st-home.png",embed:true,badge:"Component lib",badgeClass:"plat",borrow:"Command-K search pill + left sidebar taxonomy. Task-steps pattern for the mock-up."},
+{id:"pushad",name:"shadcn/ui · Sidebar",url:"https://ui.shadcn.com/docs/components/sidebar",shot:"shots/product-ui/08b-shadcn-sidebar.png",embed:true,badge:"Component lib",badgeClass:"plat",borrow:"Sidebar with group labels, items with counts, header workspace block, collapses on mobile."},
+{id:"pushadcmd",name:"shadcn/ui · Command",url:"https://ui.shadcn.com/docs/components/command",shot:"shots/product-ui/08c-shadcn-command.png",embed:true,badge:"Component lib",badgeClass:"plat",borrow:"Command input with icon and kbd hint, grouped results. Plus Badge and Table primitives for provenance pills and the AirTM table."},
+{id:"pushadhome",name:"shadcn/ui · home",url:"https://ui.shadcn.com/",shot:"shots/product-ui/08-shadcn-home.png",embed:true,badge:"Component lib",badgeClass:"plat",borrow:"Card with 1px border and 8px radius as the only container style."},
+{id:"pumagic",name:"Magic UI",url:"https://magicui.design/",shot:"shots/product-ui/09-magicui-home.png",embed:true,badge:"Calm only",badgeClass:"plat",borrow:"Timeline idea for How I work, kept static. No glow, no particles."},
+{id:"puacet",name:"Aceternity UI",url:"https://ui.aceternity.com/",shot:"shots/product-ui/10-aceternity-home.png",embed:true,badge:"Calm only",badgeClass:"plat",borrow:"Vertical timeline rail with small nodes. Skip aurora and 3D."},
+{id:"puhyper",name:"HyperUI",url:"https://www.hyperui.dev/",shot:"shots/product-ui/11-hyperui-home.png",embed:true,badge:"Plain HTML",badgeClass:"plat",borrow:"Plain HTML badges, tables and description lists that work in one static file with no framework."}
 ];
 const comps=[
 {name:"Stats Bento",url:"https://21st.dev/@uilayout.contact/components/stats-bento",img:"shots/comps/stats-bento.png",borrow:"Big numeral + tiny uppercase label in mixed tiles. Proof-chip model. Reskin cream/ink."},
@@ -149,6 +169,7 @@ function compCard(c){
 document.getElementById('deck-proposed').innerHTML=proposed.map((s,i)=>frameCard(s,i,'01 · ')).join('');
 document.getElementById('deck-sites').innerHTML=sites.map((s,i)=>frameCard(s,i,String(i+2).padStart(2,'0')+' · ')).join('');
 document.getElementById('deck-platforms').innerHTML=platforms.map((s,i)=>frameCard(s,i,'P'+String(i+1).padStart(2,'0')+' · ')).join('');
+document.getElementById('deck-productui').innerHTML=productUI.map((s,i)=>frameCard(s,i,'E'+String(i+1).padStart(2,'0')+' · ')).join('');
 document.getElementById('deck-comps').innerHTML=comps.map(compCard).join('');
 document.querySelectorAll('.frame-wrap').forEach(wrap=>{
   wrap.addEventListener('click',e=>{if(!e.altKey)return;const p=wrap.querySelector('.poster');if(p)p.classList.toggle('show');});
